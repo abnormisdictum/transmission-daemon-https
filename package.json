@@ -1,0 +1,25 @@
+{
+  "name": "transmission-https",
+  "version": "1.0.0",
+  "description": "A basic HTTPS proxy written for Transmission-Daemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Transmission",
+    "transmission-daemon",
+    "node",
+    "nodejs",
+    "https",
+    "transmission",
+    "https"
+  ],
+  "author": "Abnormis Dictum",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "config": "^1.26.1",
+    "http-proxy": "^1.16.2",
+    "httpp-proxy": "^0.10.3"
+  }
+}
