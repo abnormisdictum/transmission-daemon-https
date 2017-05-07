@@ -29,19 +29,19 @@ npm install
 ```
 openssl req -x509 -newkey rsa:4096 -keyout <your_name_for_your_key>.pem -out <your_name_for_your_cert>.pem -days 365
 ```
-You need to remove the password that you locked the key with, otherwise node will be unable to read it.
+ You need to remove the password that you locked the key with, otherwise node will be unable to read it.
 ```
 openssl rsa -in <your_name_for_your_key>.pem -out <some_temp_name>.pem && mv <some_temp_name>.pem <your_name_for_your_key>.pem
 ```
 
 7. Edit the config.js file to suite the your settings, the options are as follows
- -server: Properties for the HTTPS server that will act as your proxy
-  +keyFile: loacation of the key.pem file you just created
-  +certFile: loacation of the cert.pem file you just created.
-  +port: Port nuumber that you want your https server to listen on.
- -daemon: settings for your transmission-daemon.
-  +host: ip address of your daemon. If you have followed step 1-3, it should be kept as the default localhost.
-  +port: the port the transmission-daemon is listening on.
+  - server: Properties for the HTTPS server that will act as your proxy
+    - keyFile: loacation of the key.pem file you just created
+    - certFile: loacation of the cert.pem file you just created.
+    - port: Port nuumber that you want your https server to listen on.
+  - daemon: settings for your transmission-daemon.
+    - host: ip address of your daemon. If you have followed step 1-3, it should be kept as the default localhost.
+    - port: the port the transmission-daemon is listening on.
 
 8. run the program
 ```
