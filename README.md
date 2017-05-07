@@ -29,6 +29,11 @@ npm install
 ```
 openssl req -x509 -newkey rsa:4096 -keyout <your_name_for_your_key>.pem -out <your_name_for_your_cert>.pem -days 365
 ```
+You need to remove the password that you locked the key with, otherwise node will be unable to read it.
+```
+openssl rsa -in <your_name_for_your_key>.pem -out <some_temp_name>.pem && mv <some_temp_name>.pem <your_name_for_your_key>.pem
+```
+
 7. Edit the config.js file to suite the your settings, the options are as follows
  -server: Properties for the HTTPS server that will act as your proxy
   +keyFile: loacation of the key.pem file you just created
@@ -51,7 +56,11 @@ npm install -g pm2
 ```
 2. Make sure you are in the transmissin-daemon-https directory when you run the following command
 ```
-pm2 start index.js
+pm2 start index.js --name "TransmissionHTTPS"
 ```
-
+3. You can stop it anytime by using
+```
+pm2 stop "TransmissionHTTPS"
+```
+By using the `--name` you can start and stop using the nametag from anywhere, rather than having to call index.js from the directory only.
 And thats about all there is to it.
