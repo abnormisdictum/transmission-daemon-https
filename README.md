@@ -1,6 +1,6 @@
 # transmission-daemon-https
 An Https proxy in NodeJS, so that you can control the transmission-daemon using SSL.
-##Steps:
+## Steps:
 1. First Stop transmission-daemon
 ```
 service transmission-daemon stop
@@ -43,7 +43,7 @@ openssl req -x509 -newkey rsa:4096 -keyout <your_name_for_your_key>.pem -out <yo
 node index.js
 ```
 
-##Optional: Running proxy in the background.
+## Optional: Running proxy in the background.
 In case you would like the proxy server to run in the background continuously, you can use pm2. PM2 is better than forever in many ways. But the syntax for both is pretty much the same.
 1. install pm2 globally
 ```
