@@ -18,6 +18,8 @@ proxy.createProxyServer({
 		host: daemon_host,
 		port: daemon_port
 		},
-	secure :false
+	secure: false,
+	xfwd: true,
+	ws:true
 }).listen(server_port, server_host);
 console.log('Proxy is up');
